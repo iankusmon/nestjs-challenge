@@ -6,17 +6,17 @@ services:
     restart: always
     environment:
       - POSTGRES_PASSWORD=postgres
-    container_name: postgres-demo
+    container_name: postgres-simulation
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     ports:
-      - '5432:5432'
+      - '5434:5434'
 
   app:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: nest-docker-postgres
+    container_name: nest-docker-feat-postgres
     environment:
       - PORT=${PORT}
     ports:
@@ -29,7 +29,7 @@ services:
   pgadmin:
     image: dpage/pgadmin4
     restart: always
-    container_name: nest-pgadmin4-demo
+    container_name: nest-pgadmin4-simulation
     environment:
       - PGADMIN_DEFAULT_EMAIL=admin@admin.com
       - PGADMIN_DEFAULT_PASSWORD=pgadmin4
