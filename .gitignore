@@ -1,0 +1,5 @@
+debug.log
+# Ignore pgdata, but keep the directory.
+/pgdata/*
+!/pgdata/
+!/pgdata/.keep
