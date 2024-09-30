@@ -6,6 +6,7 @@ import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { User } from './user/entities/user.entity';
 import { LeaderboardController } from './leaderboard/leaderboard.controller';
+import { Leaderboard } from './leaderboard/entities/leaderboard.entity';
 
 @Module({
   imports: [
@@ -15,7 +16,7 @@ import { LeaderboardController } from './leaderboard/leaderboard.controller';
       port: 5432,
       username: 'postgres',
       password: 'postgres',
-      entities: [User], // here we have added user enitity in entities array
+      entities: [User, Leaderboard], // here we have added user enitity in entities array
       database: 'postgres',
       synchronize: true,
       logging: true,
