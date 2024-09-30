@@ -3,3 +3,4 @@ debug.log
 /pgdata/*
 !/pgdata/
 !/pgdata/.keep
+node_modules
