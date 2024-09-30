@@ -9,4 +9,4 @@ import { Leaderboard } from './entities/leaderboard.entity';
   controllers: [LeaderboardController],
   providers: [LeaderboardService],
 })
-export class UserModule {}
+export class LeaderboardModule {}

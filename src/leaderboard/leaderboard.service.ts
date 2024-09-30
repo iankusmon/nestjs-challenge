@@ -32,6 +32,11 @@ export class LeaderboardService {
    * @returns promise of array of Leaderboards
    */
   findAllLeaderboard(): Promise<Leaderboard[]> {
-    return this.LeaderboardRepository.find();
+    return this.LeaderboardRepository.find({
+      take: 10,
+      order: {
+        score: "DESC"
+      },
+    })
   }
 }

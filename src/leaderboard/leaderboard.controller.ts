@@ -1,4 +1,5 @@
 import { Controller, Get, Post, Body, Req, Header, HttpCode, Res } from '@nestjs/common';
+import { LeaderboardService } from './leaderboard.service';
 import { CreateLeaderboardDto } from './dto/create-leaderboard.dto'
 
 let leaderboards = [
@@ -41,11 +42,10 @@ let leaderboards = [
 
 @Controller('leaderboard')
 export class LeaderboardController{
-    @Get('index') // leaderboard/index
-    @HttpCode(200)
-    @Header('Content-Type', 'application/json')
-    index(@Res() response){
-        response.json(leaderboards);
+    constructor(private readonly leaderboardService: LeaderboardService) {}
+    @Get('index')
+    findAll() {
+        return this.leaderboardService.findAllLeaderboard();
     }
 
     @Post('store') // leaderboard/store

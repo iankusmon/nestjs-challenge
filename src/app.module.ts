@@ -4,8 +4,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
+import { LeaderboardModule } from './leaderboard/leaderboard.module';
 import { User } from './user/entities/user.entity';
-import { LeaderboardController } from './leaderboard/leaderboard.controller';
 import { Leaderboard } from './leaderboard/entities/leaderboard.entity';
 
 @Module({
@@ -23,9 +23,10 @@ import { Leaderboard } from './leaderboard/entities/leaderboard.entity';
       autoLoadEntities: true,
     }),
     UserModule,
+    LeaderboardModule,
     AuthModule,
   ],
-  controllers: [AppController, LeaderboardController],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
